@@ -13,6 +13,7 @@ import { CSharpAdapter } from './adapters/csharp.js';
 import { PythonAdapter } from './adapters/python.js';
 import { GoAdapter } from './adapters/go.js';
 import { JavaAdapter } from './adapters/java.js';
+import { PhpAdapter } from './adapters/php.js';
 import { detectLanguage, hashContent } from './utils.js';
 import type { SupportedLanguage, GraphNode, GraphEdge } from '../types.js';
 
@@ -25,6 +26,7 @@ const ADAPTERS: Record<SupportedLanguage, LanguageAdapter> = {
   python: new PythonAdapter(),
   go: new GoAdapter(),
   java: new JavaAdapter(),
+  php: new PhpAdapter(),
 };
 
 /** Default glob patterns to ignore */
@@ -169,7 +171,7 @@ export class Parser {
 
   /** Discover all parseable source files under projectRoot */
   private async discoverFiles(): Promise<string[]> {
-    const extensions = ['ts', 'tsx', 'js', 'jsx', 'mjs', 'cs', 'py', 'go', 'java'];
+    const extensions = ['ts', 'tsx', 'js', 'jsx', 'mjs', 'cs', 'py', 'go', 'java', 'php'];
     const pattern = `**/*.{${extensions.join(',')}}`;
 
     const files = await glob(pattern, {

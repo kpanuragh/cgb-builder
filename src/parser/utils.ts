@@ -69,6 +69,7 @@ export function detectLanguage(filePath: string): SupportedLanguage | null {
     '.py': 'python',
     '.go': 'go',
     '.java': 'java',
+    '.php': 'php',
   };
   return MAP[ext] ?? null;
 }

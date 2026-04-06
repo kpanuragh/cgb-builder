@@ -62,7 +62,7 @@ export interface FileRecord {
 
 // ─── Language Support ────────────────────────────────────────────────────────
 
-export type SupportedLanguage = 'typescript' | 'javascript' | 'csharp' | 'python' | 'go' | 'java';
+export type SupportedLanguage = 'typescript' | 'javascript' | 'csharp' | 'python' | 'go' | 'java' | 'php';
 
 export const LANGUAGE_EXTENSIONS: Record<SupportedLanguage, string[]> = {
   typescript: ['.ts', '.tsx'],
@@ -71,6 +71,7 @@ export const LANGUAGE_EXTENSIONS: Record<SupportedLanguage, string[]> = {
   python: ['.py'],
   go: ['.go'],
   java: ['.java'],
+  php: ['.php'],
 };
 
 // ─── Parsed Output (from adapters) ───────────────────────────────────────────

@@ -21,6 +21,7 @@ const LANG_WASM_NAMES: Record<SupportedLanguage, string> = {
   python: 'tree-sitter-python.wasm',
   go: 'tree-sitter-go.wasm',
   java: 'tree-sitter-java.wasm',
+  php: 'tree-sitter-php.wasm',
 };
 
 // ─── TreeSitterEngine ─────────────────────────────────────────────────────────
